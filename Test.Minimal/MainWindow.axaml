@@ -1,0 +1,54 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:dock="TheDockingProject/dockalonia"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="Test.Minimal.MainWindow"
+        Title="Test.Minimal">
+    
+        <Grid>
+                <StackPanel Orientation="Vertical" Spacing="10" Margin="0,10">
+            
+                        <TextBlock FontSize="20"> Rearrange Tab Control</TextBlock>
+
+                        <dock:RearrangeTabControl Classes="dark-Style" Background="Transparent">
+                                <dock:AdvancedTab  Classes="dark-style"  Header="Tab1 "/>
+                                <dock:AdvancedTab Classes="dark-style"  Header="Tab 2"/>
+                                <dock:AdvancedTab Classes="dark-style"  Header="Tab 3"/>
+                                <dock:AdvancedTab Classes="dark-style"  Header="Tab 4"/>
+                        </dock:RearrangeTabControl>
+            
+                        <TextBlock FontSize="20">Detachable Tab Control</TextBlock>
+                        <dock:DetachableTabControl Classes="Dark-Style">
+                                <dock:AdvancedTab Classes="dark-style" Header="Tab1 ">
+                                        <TextBox> Content tab1</TextBox>
+                                </dock:AdvancedTab>
+                                <dock:AdvancedTab Classes="dark-style" Header="Tab 2">
+                                        <TextBox> Content tab2</TextBox>
+                                </dock:AdvancedTab>
+                                <dock:AdvancedTab Classes="dark-style" Header="Tab 3">
+                                        <TextBox> Content tab3</TextBox>
+                                </dock:AdvancedTab>
+                                <dock:AdvancedTab Classes="dark-style" Header="Tab 4">
+                                        <TextBox> Content tab4</TextBox>
+                                </dock:AdvancedTab></dock:DetachableTabControl>
+                        <TextBlock FontSize="20">Detachable Tab Control</TextBlock>
+                        <dock:DetachableTabControl Classes="Dark-Style">
+                                <dock:AdvancedTab Classes="dark-style" Header="Tab1 ">
+                                        <TextBox> Content tab1</TextBox>
+                                </dock:AdvancedTab>
+                                <dock:AdvancedTab Classes="dark-style" Header="Tab 2">
+                                        <TextBox> Content tab2</TextBox>
+                                </dock:AdvancedTab>
+                                <dock:AdvancedTab Classes="dark-style" Header="Tab 3">
+                                        <TextBox> Content tab3</TextBox>
+                                </dock:AdvancedTab>
+                                <dock:AdvancedTab Classes="dark-style" Header="Tab 4">
+                                        <TextBox> Content tab4</TextBox>
+                                </dock:AdvancedTab></dock:DetachableTabControl>
+            </StackPanel>
+        </Grid>
+        
+        
+</Window>

@@ -1,0 +1,13 @@
+C:\Users\Callu\Documents\Dockalonia\DockaloniaMinimal\bin\Debug\net10.0\DockaloniaMinimal.deps.json
+C:\Users\Callu\Documents\Dockalonia\DockaloniaMinimal\bin\Debug\net10.0\DockaloniaMinimal.dll
+C:\Users\Callu\Documents\Dockalonia\DockaloniaMinimal\bin\Debug\net10.0\DockaloniaMinimal.pdb
+C:\Users\Callu\Documents\Dockalonia\DockaloniaMinimal\obj\Debug\net10.0\DockaloniaMinimal.csproj.AssemblyReference.cache
+C:\Users\Callu\Documents\Dockalonia\DockaloniaMinimal\obj\Debug\net10.0\Avalonia\Resources.Inputs.cache
+C:\Users\Callu\Documents\Dockalonia\DockaloniaMinimal\obj\Debug\net10.0\DockaloniaMinimal.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Callu\Documents\Dockalonia\DockaloniaMinimal\obj\Debug\net10.0\DockaloniaMinimal.AssemblyInfoInputs.cache
+C:\Users\Callu\Documents\Dockalonia\DockaloniaMinimal\obj\Debug\net10.0\DockaloniaMinimal.AssemblyInfo.cs
+C:\Users\Callu\Documents\Dockalonia\DockaloniaMinimal\obj\Debug\net10.0\DockaloniaMinimal.csproj.CoreCompileInputs.cache
+C:\Users\Callu\Documents\Dockalonia\DockaloniaMinimal\obj\Debug\net10.0\DockaloniaMinimal.dll
+C:\Users\Callu\Documents\Dockalonia\DockaloniaMinimal\obj\Debug\net10.0\refint\DockaloniaMinimal.dll
+C:\Users\Callu\Documents\Dockalonia\DockaloniaMinimal\obj\Debug\net10.0\DockaloniaMinimal.pdb
+C:\Users\Callu\Documents\Dockalonia\DockaloniaMinimal\obj\Debug\net10.0\ref\DockaloniaMinimal.dll

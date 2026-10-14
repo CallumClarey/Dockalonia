@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "OoZkciI2+zk=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Callu\\Documents\\Dockalonia\\DockaloniaMinimal\\DockaloniaMinimal.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Callu\\.nuget\\packages\\avalonia\\12.1.4\\avalonia.12.1.4.nupkg.sha512",
+    "C:\\Users\\Callu\\.nuget\\packages\\avalonia.buildservices\\11.3.2\\avalonia.buildservices.11.3.2.nupkg.sha512",
+    "C:\\Users\\Callu\\.nuget\\packages\\avalonia.remote.protocol\\12.1.4\\avalonia.remote.protocol.12.1.4.nupkg.sha512",
+    "C:\\Users\\Callu\\.nuget\\packages\\microcom.runtime\\0.11.6\\microcom.runtime.0.11.6.nupkg.sha512"
+  ],
+  "logs": []
+}

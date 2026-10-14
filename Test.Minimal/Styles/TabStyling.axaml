@@ -1,0 +1,63 @@
+﻿<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Design.PreviewWith>
+        <Border Padding="20" Background="#10141A">
+            <TabControl Classes="dark-style">
+                <TabItem Classes="dark-style" Header="Dashboard" />
+                <TabItem Classes="dark-style" Header="Analytics" />
+                <TabItem Classes="dark-style" Header="Settings" />
+            </TabControl>
+        </Border>
+    </Design.PreviewWith>
+
+    <!-- Palette -->
+    <Style Selector="TabItem.dark-style">
+        <Setter Property="Background" Value="#1A2230" />
+        <Setter Property="Foreground" Value="#8FA3C0" />
+        <Setter Property="BorderBrush" Value="#2A3B55" />
+        <Setter Property="BorderThickness" Value="0,0,0,2" />
+        <Setter Property="Padding" Value="16,8" />
+        <Setter Property="Margin" Value="0,0,2,0" />
+        <Setter Property="FontSize" Value="13" />
+        <Setter Property="CornerRadius" Value="6,6,0,0" />
+        <Setter Property="Transitions">
+            <Transitions>
+                <BrushTransition Property="Background" Duration="0:0:0.12" />
+                <BrushTransition Property="Foreground" Duration="0:0:0.12" />
+            </Transitions>
+        </Setter>
+    </Style>
+
+    <!-- Hover -->
+    <Style Selector="TabItem.dark-style:pointerover /template/ ContentPresenter">
+        <Setter Property="Background" Value="#22304A" />
+    </Style>
+    <Style Selector="TabItem.dark-style:pointerover">
+        <Setter Property="Foreground" Value="#C3D4EC" />
+    </Style>
+
+    <!-- Selected -->
+    <Style Selector="TabItem.dark-style:selected">
+        <Setter Property="Background" Value="#22304A" />
+        <Setter Property="Foreground" Value="#E3ECFA" />
+        <Setter Property="BorderBrush" Value="#4A7BD6" />
+    </Style>
+
+    <!-- Selected + hover (keep the accent border dominant) -->
+    <Style Selector="TabItem.dark-style:selected:pointerover">
+        <Setter Property="Background" Value="#283557" />
+        <Setter Property="Foreground" Value="#E3ECFA" />
+    </Style>
+
+    <!-- Disabled -->
+    <Style Selector="TabItem.dark-style:disabled">
+        <Setter Property="Foreground" Value="#45516A" />
+        <Setter Property="Opacity" Value="0.6" />
+    </Style>
+
+    <!-- Content area background -->
+    <Style Selector="TabControl.dark-style /template/ ContentPresenter#PART_SelectedContentHost">
+        <Setter Property="Background" Value="Transparent" />
+    </Style>
+
+</Styles>

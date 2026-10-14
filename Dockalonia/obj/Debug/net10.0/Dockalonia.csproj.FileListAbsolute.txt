@@ -1,0 +1,11 @@
+C:\Users\Callu\Documents\Dockalonia\Dockalonia\bin\Debug\net10.0\Dockalonia.deps.json
+C:\Users\Callu\Documents\Dockalonia\Dockalonia\bin\Debug\net10.0\Dockalonia.dll
+C:\Users\Callu\Documents\Dockalonia\Dockalonia\bin\Debug\net10.0\Dockalonia.pdb
+C:\Users\Callu\Documents\Dockalonia\Dockalonia\obj\Debug\net10.0\Dockalonia.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Callu\Documents\Dockalonia\Dockalonia\obj\Debug\net10.0\Dockalonia.AssemblyInfoInputs.cache
+C:\Users\Callu\Documents\Dockalonia\Dockalonia\obj\Debug\net10.0\Dockalonia.AssemblyInfo.cs
+C:\Users\Callu\Documents\Dockalonia\Dockalonia\obj\Debug\net10.0\Dockalonia.csproj.CoreCompileInputs.cache
+C:\Users\Callu\Documents\Dockalonia\Dockalonia\obj\Debug\net10.0\Dockalonia.dll
+C:\Users\Callu\Documents\Dockalonia\Dockalonia\obj\Debug\net10.0\refint\Dockalonia.dll
+C:\Users\Callu\Documents\Dockalonia\Dockalonia\obj\Debug\net10.0\Dockalonia.pdb
+C:\Users\Callu\Documents\Dockalonia\Dockalonia\obj\Debug\net10.0\ref\Dockalonia.dll

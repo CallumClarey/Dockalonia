@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="Dockalonia/Dockalonia.csproj" />
+  <Project Path="DockaloniaMinimal/DockaloniaMinimal.csproj" />
+  <Project Path="Test.Minimal/Test.Minimal.csproj" />
+</Solution>
