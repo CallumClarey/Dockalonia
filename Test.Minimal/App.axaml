@@ -6,6 +6,7 @@
 
     <Application.Styles>
         <FluentTheme />
-        <StyleInclude Source="avares://Test.Minimal/Styles/TabStyling.axaml" />
+        <!-- <StyleInclude Source="avares://Test.Minimal/Styles/TabStyling.axaml" /> -->
+        <StyleInclude Source="avares://Test.Minimal/Styles/TabStyling2.axaml" />
     </Application.Styles>
 </Application>

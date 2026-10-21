@@ -2,70 +2,60 @@
 using Avalonia.Controls;
 using Avalonia.Input;
 using DockaloniaMinimal.Tabbing;
+using DockaloniaMinimal.Tabbing.TabControls;
 
 namespace DockaloniaMinimal.TabDragging;
 
 /// <summary>
-/// Interface to allow a hook for tab dragging. So end users can provide their own functionality.
+/// Interface used to handle the tab dragging in the <see cref="RearrangeTabControl"/>
+/// Allows user to implement their own dragging logic if the default is undesirable.
 /// </summary>
 public interface ITabDragHandler
 {
     /// <summary>
-    ///  Property to allow the dragging to be paused.
-    ///  Used mainly for the <see cref="DetachableTabControl"/> but could have other uses cases. 
+    /// The <see cref="RearrangeTabControl"/> that owns the handler.
     /// </summary>
-    public bool PauseDrag { get; set; }
+    public RearrangeTabControl? Owner {get; init; }
     
     /// <summary>
-    /// Interface used to handle the tab dragging in the <see cref="RearrangeTabControl"/>
-    /// Allows user to implement their own dragging logic if the default is undesirable.
-    /// </summary>
-    /// <param name="e"></param>
-    /// <param name="draggedTab"></param>
-    /// <param name="tabControl"></param>
-    public void HandleTabDragging(
-        PointerEventArgs e,
-        (TabItem tabItem, Point topLeft) draggedTab,
-        RearrangeTabControl tabControl
-    );
-    
-    // Animation hook functions
-    //-------------------------------------
-
-    /// <summary>
-    ///  Reset the tab item on the drag handler.
-    ///  Used primarily for when a tab item is remove or undocked in the middle of a drag.
-    /// </summary>
-    /// <param name="tabItem">The tab item to reset.</param>
-    public void ResetDragging(TabItem tabItem);
-    
-    
-    /// <summary>
-    ///  Animation event to hook on tab drag handling.
+    ///  Function to be called when the drag starts.
     /// </summary>
     /// <param name="e"> Pointer event.</param>
     /// <param name="draggedTab"> The dragging tab.</param>
-    /// <param name="tabControl"> The tab control that owns the tab.</param>
-    public void OnDragStarted(PointerEventArgs e, 
-        (TabItem tabItem, Point topLeft) draggedTab, 
-        RearrangeTabControl? tabControl = null) { }
+    public void OnDragStarted(PointerEventArgs e, (TabItem tabItem, Point topLeft) draggedTab);
+    
+    
+    /// <summary>
+    ///  Function used to implement all dragging logic.
+    /// </summary>
+    /// <param name="e"></param>
+    /// <param name="draggedTab"></param>
+    public void HandleTabDragging(PointerEventArgs e, (TabItem tabItem, Point topLeft) draggedTab);
+
 
     /// <summary>
-    ///  
+    /// Function to be called when the drag should end 
     /// </summary>
     /// <param name="draggedTab"></param>
-    /// <param name="fromIndex"></param>
-    /// <param name="toIndex"></param>
-    /// <param name="tabControl"></param>
-    public void OnTabsSwapped(TabItem draggedTab, 
-        int fromIndex, int toIndex, 
-        RearrangeTabControl tabControl) { }
-
+    public void OnDragCompleted((TabItem tabItem, Point topLeft) draggedTab);
+    
+    
     /// <summary>
-    /// On pointer release. 
+    ///  Returns a static <see cref="ITabDragHandler"/> that does provide any functions implementations to disable dragging.
     /// </summary>
-    /// <param name="draggedTab"></param>
-    /// <param name="tabControl"></param>
-    public void OnDragCompleted((TabItem tabItem, Point topLeft) draggedTab, 
-        RearrangeTabControl? tabControl = null) { }
+    public static StaticDragHandler NoDrag(RearrangeTabControl control) => new(control);
+    
+    
+    /// <summary>
+    ///  Class used to represent a static drag handler it does nothing mean <see cref="TabItem"/> will not react.
+    /// </summary>
+    public class StaticDragHandler(RearrangeTabControl control) : ITabDragHandler
+    {
+        public RearrangeTabControl? Owner { get; init; } = control;
+        public void HandleTabDragging(PointerEventArgs e, (TabItem tabItem, Point topLeft) draggedTab) { }
+
+        public void OnDragStarted(PointerEventArgs e, (TabItem tabItem, Point topLeft) draggedTab) { }
+
+        public void OnDragCompleted((TabItem tabItem, Point topLeft) draggedTab) { }
+    }
 }

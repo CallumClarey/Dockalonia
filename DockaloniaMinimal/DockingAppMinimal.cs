@@ -1,7 +1,9 @@
-﻿using Avalonia.Controls;
+﻿using Avalonia;
+using Avalonia.Controls;
 using DockaloniaMinimal.Docking;
 using DockaloniaMinimal.Previews;
 using DockaloniaMinimal.Tabbing;
+using DockaloniaMinimal.Tabbing.TabControls;
 
 namespace DockaloniaMinimal;
 
@@ -30,7 +32,7 @@ public static class DockingAppMinimal
         if (sender is not RearrangeTabControl tabControl)
             throw new ArgumentException("sender is not a RearrangeTabControl", nameof(sender));
         
-        // Create a new drag out holderl
+        // Create a new drag out holder
         DetachHandlerInstance.Enable(e);
     }
     
@@ -42,10 +44,10 @@ public static class DockingAppMinimal
     /// <summary>
     /// Configuration for what window template will be used when tabs are dropped out. 
     /// </summary>
-    public static Func<DraggingOutTabArgs, Window>? NewDockDropWindowTemplate { get; set; }
+    public static Func<DraggingOutTabArgs, PixelPoint, Window>? NewDockDropWindowTemplate { get; set; }
     
     /// <summary>
-    /// Configuration that lets the drag out previewer to be changed
+    /// Configuration that lets the drag out previewer to be changed.
     /// </summary>
     public static Func<DraggingOutTabArgs, PreviewWindow>? DragoutControlTemplate { get; set; }
     

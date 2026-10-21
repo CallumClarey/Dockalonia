@@ -15,10 +15,11 @@ public partial class App : Application
         AvaloniaXamlLoader.Load(this);
         
         // Init docking code 
-        // All of this code will bind the fallback values but these values can be chnaged.
+        // All of this code will bind the custom configure values that can be changed 
         DockingAppMinimal.InitDocking(); // Required line 
         DockingAppMinimal.PreviewTabDockTemplate = tab => new PreviewDropTab(tab);
-        DockingAppMinimal.NewDockDropWindowTemplate = dragArgs => new Window();
+        DockingAppMinimal.NewDockDropWindowTemplate = (dragArgs, point) => new DefaultDropoutWindow(dragArgs, point);
+        DockingAppMinimal.DragoutControlTemplate = args => new ContentGhost(args.TabDragRef);
     }
 
     public override void OnFrameworkInitializationCompleted()

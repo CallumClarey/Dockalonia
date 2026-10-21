@@ -1,0 +1,71 @@
+﻿<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Design.PreviewWith>
+        <Border Padding="20">
+            <Border Padding="20" Background="#10141A">
+                <TabControl>
+                    <TabItem Header="Dashboard" />
+                    <TabItem Header="Analytics" />
+                    <TabItem Header="Settings" />
+                </TabControl>
+            </Border>
+        </Border>
+    </Design.PreviewWith>
+
+    <!-- Add Styles Here -->
+    
+    <!-- TabControl: dark surface and seamless tab strip -->
+    <Style Selector="TabControl">
+        <Setter Property="Background" Value="#1E1E1E" />
+        <Setter Property="Foreground" Value="#E6E6E6" />
+        <Setter Property="BorderBrush" Value="#30343B" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="Padding" Value="0" />
+    </Style>
+
+    <!-- TabItem: Chrome-inspired attached tabs -->
+    <Style Selector="TabItem">
+        <Setter Property="Background" Value="#2A2A2A" />
+        <Setter Property="Foreground" Value="#B0B8C2" />
+        <Setter Property="FontSize" Value="15" />
+        <Setter Property="FontWeight" Value="Normal" />
+        <Setter Property="Padding" Value="16,10" />
+        <Setter Property="MinHeight" Value="36" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Margin" Value="0" />
+
+        <!-- Own the header appearance, without Fluent's underline -->
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Border Background="{TemplateBinding Background}"
+                        CornerRadius="2,6,0,0"
+                        Padding="{TemplateBinding Padding}">
+                    <ContentPresenter
+                        Content="{TemplateBinding Header}"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center" />
+                </Border>
+            </ControlTemplate>
+        </Setter>
+    </Style>
+
+    <!-- Hover -->
+    <Style Selector="TabItem:pointerover">
+        <Setter Property="Background" Value="#353B48" />
+        <Setter Property="Foreground" Value="#E8EDF5" />
+    </Style>
+
+    <!-- Selected: background only, no underline -->
+    <Style Selector="TabItem:selected">
+        <Setter Property="Background" Value="#1E1E1E" />
+        <Setter Property="Foreground" Value="#FFFFFF" />
+        <Setter Property="FontWeight" Value="SemiBold" />
+    </Style>
+
+    <!-- Disabled -->
+    <Style Selector="TabItem:disabled">
+        <Setter Property="Background" Value="#202124" />
+        <Setter Property="Foreground" Value="#687280" />
+    </Style>
+    
+</Styles>

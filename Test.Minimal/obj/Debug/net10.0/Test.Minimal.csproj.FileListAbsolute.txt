@@ -87,3 +87,4 @@ C:\Users\Callu\Documents\Dockalonia\Test.Minimal\obj\Debug\net10.0\refint\Test.M
 C:\Users\Callu\Documents\Dockalonia\Test.Minimal\obj\Debug\net10.0\Test.Minimal.pdb
 C:\Users\Callu\Documents\Dockalonia\Test.Minimal\obj\Debug\net10.0\Test.Minimal.genruntimeconfig.cache
 C:\Users\Callu\Documents\Dockalonia\Test.Minimal\obj\Debug\net10.0\ref\Test.Minimal.dll
+C:\Users\Callu\Documents\Dockalonia\Test.Minimal\obj\Debug\net10.0\Test.Minimal.sourcelink.json

@@ -4,7 +4,7 @@ using Avalonia.Input;
 using DockaloniaMinimal.Docking;
 using DockaloniaMinimal.Previews;
 
-namespace DockaloniaMinimal.Tabbing;
+namespace DockaloniaMinimal.Tabbing.TabControls;
 
 
 /// <summary>
@@ -31,10 +31,12 @@ public class DetachableTabControl : RearrangeTabControl, IDockingControl
         set => SetValue(DragOutMarginProperty, value);
     }
     
+    
     /// <summary>
     ///  Event for when the tab is dragged out of the window.
     /// </summary>
     public static event EventHandler<DraggingOutTabArgs>? DetachTabEvent;
+    
     
     /// <summary>
     /// Tab item used to preview reattach positioning. 
@@ -45,7 +47,7 @@ public class DetachableTabControl : RearrangeTabControl, IDockingControl
     protected override void OnPointerMoved(PointerEventArgs e)
     {
         // Check if the tab should be detached
-        if(CheckForDetachment(e) && _draggedTab is not null) DetachTab(e);
+        if(CheckForDetachment(e) && DraggedTab is not null) DetachTab(e);
         base.OnPointerMoved(e);
     }
 
@@ -73,10 +75,10 @@ public class DetachableTabControl : RearrangeTabControl, IDockingControl
     /// <param name="e"> The pointer event of the drag. </param>
     private void DetachTab(PointerEventArgs e)
     {
-        if(_draggedTab is null) return;
+        if(DraggedTab is null) return;
         
-        DragHandler.OnDragCompleted(_draggedTab.Value,this);
-        var (tabItem, offset) = _draggedTab.Value;
+        DragHandler.OnDragCompleted(DraggedTab.Value);
+        var (tabItem, offset) = DraggedTab.Value;
         
         var tabIndex = Items.IndexOf(tabItem);
         if (tabIndex > 0)
@@ -85,37 +87,25 @@ public class DetachableTabControl : RearrangeTabControl, IDockingControl
             SelectedItem = Items[1];
         
         Items.Remove(tabItem);
-        _draggedTab = null;
+        DraggedTab = null;
         
         var newTabDraggedEvent = new DraggingOutTabArgs(e, tabItem, offset,
-            _contentPresenterPart?.Bounds.Size ?? Bounds.Size);
+            ExposedContentPresenterPart?.Bounds.Size ?? Bounds.Size);
         
         DetachTabEvent?.Invoke(this, newTabDraggedEvent);
     }
     
     
-    // Helper function to get the rectangle presenter of the tab bar
-    private bool TryGetTabBarRect(out Rect rect)
-    {
-        var tabBarPanel = _itemsPresenterPart?.Panel;
-        if (tabBarPanel is null)
-        {
-            rect = default;
-            return false;
-        }
-        
-        rect = this.GetBoundsOf(tabBarPanel);
-        return true;
-    }
-
     // All docking logic here 
     //----------------------------------------
+    
     
     // Helper function to return the position under the pointer
     private int GetIndexUnderPointer(PointerEventArgs args)
     {
         var position = args.GetPosition(this);
-        return GetTabIndexAt(position);
+        GetTabItemAt(position, out _,out var index);
+        return index;
     }
     
     void IDockingControl.HandleDocking(DraggingOutTabArgs args)
@@ -130,15 +120,17 @@ public class DetachableTabControl : RearrangeTabControl, IDockingControl
     void IDockingControl.DisplayDockingPreview(DraggingOutTabArgs args)
     {
         var position = args.Pointer.GetPosition(this);
-        var rawIndex = GetTabIndexAt(position);
-
+        GetTabItemAt(position, out _,out var rawIndex);
+        
+        Console.WriteLine($"Raw index {rawIndex}");
+        
         PreviewTabItem ??= 
             DockingAppMinimal.PreviewTabDockTemplate?.Invoke(args.TabDragRef) 
             ?? new PreviewDropTab(args.TabDragRef);
         
         var currentIndex = Items.IndexOf(PreviewTabItem);
 
-        if (currentIndex == -1)
+        if (currentIndex == -1) 
         {
             // Insert can legally target Items.Count (append).
             var insertIndex = rawIndex < 0 ? Items.Count : rawIndex;
@@ -148,7 +140,6 @@ public class DetachableTabControl : RearrangeTabControl, IDockingControl
         {
             // Move's target must be an existing index — clamp to the last valid slot.
             var moveIndex = rawIndex < 0 ? Items.Count - 1 : rawIndex;
-            Console.WriteLine(moveIndex);
             if (currentIndex != moveIndex)
                 Move(currentIndex, moveIndex);
         }
@@ -158,9 +149,19 @@ public class DetachableTabControl : RearrangeTabControl, IDockingControl
     {
         if (PreviewTabItem is null) return;
         // Safe add but this should always contain
-        if (Items.Contains(PreviewTabItem))
-            Items.Remove(PreviewTabItem);
-
+        if (Items.Contains(PreviewTabItem)) Items.Remove(PreviewTabItem);
         PreviewTabItem = null;
+    }
+    
+    
+    /// <summary>
+    /// Special function to inset so we do not select the preview item.
+    /// </summary>
+    protected void InsertPreview(int index, TabItem itemToInset)
+    {
+        var previousSelected = SelectedItem;
+        Console.WriteLine(index);
+        Items.Insert(index, itemToInset);
+        SelectedItem = previousSelected;
     }
 }

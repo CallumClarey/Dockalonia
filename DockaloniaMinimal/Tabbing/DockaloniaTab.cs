@@ -11,7 +11,7 @@ namespace DockaloniaMinimal.Tabbing;
 /// <summary>
 /// Class used to represent a tab that can be detached from a dockspace.
 /// </summary>
-public class AdvancedTab : TabItem
+public class DockaloniaTab : TabItem
 {
     // Override style key to allow styling like normal tab
     protected override Type StyleKeyOverride => typeof(TabItem);
@@ -20,7 +20,7 @@ public class AdvancedTab : TabItem
     /// Routed event that will globally fire to check when tabs are closed.
     /// </summary>
     public static readonly RoutedEvent<RoutedEventArgs> TabClosedEvent =
-        RoutedEvent.Register<AdvancedTab, RoutedEventArgs>("TabClosed", RoutingStrategies.Direct);
+        RoutedEvent.Register<DockaloniaTab, RoutedEventArgs>("TabClosed", RoutingStrategies.Direct);
     
     /// <summary>
     ///  Tab closed event. 
@@ -32,26 +32,24 @@ public class AdvancedTab : TabItem
     }
     
     /// <summary>
-    /// Fired before the <see cref="AdvancedTab"/> is closed.
+    /// Fired before the <see cref="DockaloniaTab"/> is closed.
     /// </summary>
     public event EventHandler<CancelEventArgs>? Closing;
     
 
     //Pinning test code
-    
-    
     public static readonly StyledProperty<bool> IsPinnedProperty =
-        AvaloniaProperty.Register<AdvancedTab, bool>(nameof(IsPinned));
+        AvaloniaProperty.Register<DockaloniaTab, bool>(nameof(IsPinned));
     
-
+    
     public static readonly RoutedEvent<RoutedEventArgs> TabPinnedEvent =
-        RoutedEvent.Register<AdvancedTab, RoutedEventArgs>("TabClosed", RoutingStrategies.Direct);
+        RoutedEvent.Register<DockaloniaTab, RoutedEventArgs>("TabClosed", RoutingStrategies.Direct);
 
     
-    static AdvancedTab()
+    static DockaloniaTab()
     {
         // Handle property changes safely (works with XAML styles & bindings)
-        IsPinnedProperty.Changed.AddClassHandler<AdvancedTab>((tab, e) =>
+        IsPinnedProperty.Changed.AddClassHandler<DockaloniaTab>((tab, e) =>
         {
             tab.RaiseEvent(new RoutedEventArgs(TabPinnedEvent));
         });
@@ -90,8 +88,8 @@ public class AdvancedTab : TabItem
     /// <summary>
     /// Defines AXAML Property for the <see cref="RemoveOnClosed"/>
     /// </summary>
-    public static readonly DirectProperty<AdvancedTab, bool> RemoveOnClosedProperty = 
-        AvaloniaProperty.RegisterDirect<AdvancedTab, bool>(nameof(RemoveOnClosed), 
+    public static readonly DirectProperty<DockaloniaTab, bool> RemoveOnClosedProperty = 
+        AvaloniaProperty.RegisterDirect<DockaloniaTab, bool>(nameof(RemoveOnClosed), 
             o => o.RemoveOnClosed,
             (o, v) => o.RemoveOnClosed = v);
 
@@ -102,7 +100,7 @@ public class AdvancedTab : TabItem
      */
     private readonly Dictionary<IDataTemplate, IDataTemplate?> _headerTemplateCache = [];
     private readonly IDataTemplate? _defaultHeaderTemplate;
-    public AdvancedTab()
+    public DockaloniaTab()
     {
         _defaultHeaderTemplate = CreateHeaderWithCloseButton(null);
         UpdateHeaderTemplate(null);
@@ -221,8 +219,4 @@ public class AdvancedTab : TabItem
             // Return header stack panel
             return panel;
         });
-
-
-
-
 }

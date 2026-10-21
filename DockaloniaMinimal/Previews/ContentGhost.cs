@@ -1,4 +1,5 @@
-﻿using Avalonia;
+﻿using System.Diagnostics.CodeAnalysis;
+using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Input;
 using Avalonia.Media;
@@ -13,6 +14,7 @@ namespace DockaloniaMinimal.Previews;
 public class ContentGhost : PreviewWindow
 {
     // Apply Default content 
+    [SetsRequiredMembers]
     public ContentGhost(TabItem sourceTab)
     {
         ContentContainer = new Border

@@ -14,7 +14,7 @@ public abstract class PreviewWindow : Window
     public required Border ContentContainer { get; init; }
     
     /// <summary>
-    /// Will delegate moving of the tab to the control.
+    /// Will delegate moving of the preview to inherit the control.
     /// </summary>
     /// <param name="e"></param>
     public virtual void UpdatePosition(PointerEventArgs e){}

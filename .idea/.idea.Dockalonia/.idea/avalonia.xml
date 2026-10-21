@@ -6,6 +6,7 @@
         <entry key="Test.Minimal/App.axaml" value="Test.Minimal/Test.Minimal.csproj" />
         <entry key="Test.Minimal/MainWindow.axaml" value="Test.Minimal/Test.Minimal.csproj" />
         <entry key="Test.Minimal/Styles/TabStyling.axaml" value="Test.Minimal/Test.Minimal.csproj" />
+        <entry key="Test.Minimal/Styles/TabStyling2.axaml" value="Test.Minimal/Test.Minimal.csproj" />
       </map>
     </option>
   </component>

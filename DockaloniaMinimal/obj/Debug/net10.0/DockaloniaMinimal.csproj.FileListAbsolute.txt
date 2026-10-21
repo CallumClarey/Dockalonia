@@ -11,3 +11,4 @@ C:\Users\Callu\Documents\Dockalonia\DockaloniaMinimal\obj\Debug\net10.0\Dockalon
 C:\Users\Callu\Documents\Dockalonia\DockaloniaMinimal\obj\Debug\net10.0\refint\DockaloniaMinimal.dll
 C:\Users\Callu\Documents\Dockalonia\DockaloniaMinimal\obj\Debug\net10.0\DockaloniaMinimal.pdb
 C:\Users\Callu\Documents\Dockalonia\DockaloniaMinimal\obj\Debug\net10.0\ref\DockaloniaMinimal.dll
+C:\Users\Callu\Documents\Dockalonia\DockaloniaMinimal\obj\Debug\net10.0\DockaloniaMinimal.sourcelink.json

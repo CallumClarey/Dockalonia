@@ -56,8 +56,8 @@ public class DetachHandler : IDisposable
     public void Enable(DraggingOutTabArgs e)
     {
         CurrentDragArgs = e;
-        PreviewWindow = 
-            DockingAppMinimal.DragoutControlTemplate?.Invoke(e) 
+        PreviewWindow =
+            DockingAppMinimal.DragoutControlTemplate?.Invoke(e)
             ?? new ContentGhost(e.TabDragRef);
         
         PreviewWindow.Show();
@@ -95,17 +95,44 @@ public class DetachHandler : IDisposable
 
     private void OnAnyPointerReleased(object? sender, PointerReleasedEventArgs e)
     {
+        // If the there is no drag args we cant do anything
+        if(CurrentDragArgs is null)
+        {
+            Dispose();
+            return;
+        }
+        
+        // Create new docking args with pointer event 
+        var newDockingArgs = CurrentDragArgs with { Pointer = e };
+        
         // Handle the dock
         if (IsHoveredControlDockable(e, out var control) && CurrentDragArgs is not null)
         {
             // Create docking args 
-            var newDockingArgs = CurrentDragArgs with { Pointer = e };
             control?.HandleDocking(newDockingArgs);
             control?.HideDockingPreview(newDockingArgs);
         }
+        else
+        {
+            var screenPoint = new PixelPoint(0,0);
+            if (e.Source is Visual source)
+            {
+                 screenPoint = source.PointToScreen(e.GetPosition(source));
+                // screenPoint is a PixelPoint, valid across every monitor
+                //Console.WriteLine(screenPoint.X + ":" + screenPoint.Y);
+            }
+            
+            var createdWindow = 
+                DockingAppMinimal.NewDockDropWindowTemplate?.Invoke(newDockingArgs, screenPoint) 
+                ?? new DefaultDropoutWindow(newDockingArgs,screenPoint);
+            
+            createdWindow.Show();
+        }
+        
         Dispose();
     }
 
+    
     /// <summary>
     /// Centers the ghost under the mouse cursor, in absolute screen coordinates
     /// so it can be dragged across monitor boundaries.
@@ -130,6 +157,7 @@ public class DetachHandler : IDisposable
             screenPoint.Y - (int)(height / 2));
     }
 
+    
     /// <summary>
     /// Clean up the object make sure that everything is reset ready for next drag.
     /// </summary>
@@ -191,7 +219,6 @@ public class DetachHandler : IDisposable
             if (hit is Visual visual)
                 return (window, visual);
         }
-        
         return null;
     }
 }

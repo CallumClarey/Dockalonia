@@ -1,4 +1,5 @@
 ﻿using Avalonia;
+using Avalonia.Controls;
 
 namespace DockaloniaMinimal;
 
@@ -16,19 +17,15 @@ public static class VisualExtensions
         var bottomRight = visual.TranslatePoint(new Point(visual.Bounds.Width, visual.Bounds.Height), self)!.Value;
         return new Rect(topLeft, bottomRight);
     }
-    
+
     /// <summary>
-    ///  Extension method used to normalize points.
+    ///  Extends the visual to allow Pseudo classes to be toggled on and off.
     /// </summary>
-    /// <param name="point"></param>
-    /// <returns></returns>
-    public static Point NormalisePoint(this Point point)
-    {
-        var pointX = point.X;
-        var pointY = point.Y;
-        var length = Math.Sqrt(pointX * pointX + pointY * pointY);
-        return new Point(pointX / length, pointY / length);
-    }
-    
+    /// <param name="self">The visual.</param>
+    /// <param name="className"> The name of the pseudo class to add.</param>
+    /// <param name="toggleValue">Whether the class should be on or off.</param>
+    public static void SetPseudoClass(this StyledElement self,string className ,bool toggleValue) 
+        => ((IPseudoClasses)self.Classes)
+            .Set(className[0] == ':' ? className : ':' + className, toggleValue);
     
 }
