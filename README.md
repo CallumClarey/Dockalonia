@@ -8,7 +8,7 @@ A simple, highly customisable docking library inspired by IMGUI and Updock.
 
 ## About
 
-The Dockalonia Project originally started as a fork of Updock before being completely refactored and spun into its own independent docking library. It is designed to be lightweight and flexible;
+The Dockalonia Project originally started as a fork of Updock before being completely refactored and spun into its own independent docking library. It is designed to be lightweight and flexible
 
 ---
 
