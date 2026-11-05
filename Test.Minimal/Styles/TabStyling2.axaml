@@ -2,7 +2,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <Design.PreviewWith>
         <Border Padding="20">
-            <Border Padding="20" Background="#10141A">
+            <Border Padding="20" Background="#1E1F22">
                 <TabControl>
                     <TabItem Header="Dashboard" />
                     <TabItem Header="Analytics" />
@@ -14,31 +14,31 @@
 
     <!-- Add Styles Here -->
     
-    <!-- TabControl: dark surface and seamless tab strip -->
+    <!-- TabControl: Rider/Discord inspired dark greyscale -->
     <Style Selector="TabControl">
-        <Setter Property="Background" Value="#1E1E1E" />
-        <Setter Property="Foreground" Value="#E6E6E6" />
-        <Setter Property="BorderBrush" Value="#30343B" />
+        <Setter Property="Background" Value="#1E1F22" />
+        <Setter Property="Foreground" Value="#B9BBBE" />
+        <Setter Property="BorderBrush" Value="#2B2D31" />
         <Setter Property="BorderThickness" Value="1" />
         <Setter Property="Padding" Value="0" />
     </Style>
 
-    <!-- TabItem: Chrome-inspired attached tabs -->
+    <!-- TabItem: flat grey tabs -->
     <Style Selector="TabItem">
-        <Setter Property="Background" Value="#2A2A2A" />
-        <Setter Property="Foreground" Value="#B0B8C2" />
-        <Setter Property="FontSize" Value="15" />
+        <Setter Property="Background" Value="#2B2D31" />
+        <Setter Property="Foreground" Value="#949BA4" />
+        <Setter Property="FontSize" Value="13" />
         <Setter Property="FontWeight" Value="Normal" />
-        <Setter Property="Padding" Value="16,10" />
-        <Setter Property="MinHeight" Value="36" />
+        <Setter Property="Padding" Value="14,6" />
+        <Setter Property="MinHeight" Value="28" />
         <Setter Property="BorderThickness" Value="0" />
         <Setter Property="Margin" Value="0" />
 
-        <!-- Own the header appearance, without Fluent's underline -->
+        <!-- Custom template for cleaner look -->
         <Setter Property="Template">
             <ControlTemplate>
                 <Border Background="{TemplateBinding Background}"
-                        CornerRadius="2,6,0,0"
+                        CornerRadius="4,4,0,0"
                         Padding="{TemplateBinding Padding}">
                     <ContentPresenter
                         Content="{TemplateBinding Header}"
@@ -51,21 +51,35 @@
 
     <!-- Hover -->
     <Style Selector="TabItem:pointerover">
-        <Setter Property="Background" Value="#353B48" />
-        <Setter Property="Foreground" Value="#E8EDF5" />
+        <Setter Property="Background" Value="#35373C" />
+        <Setter Property="Foreground" Value="#DBDEE1" />
     </Style>
 
-    <!-- Selected: background only, no underline -->
+    <!-- Selected: matches editor background -->
     <Style Selector="TabItem:selected">
-        <Setter Property="Background" Value="#1E1E1E" />
+        <Setter Property="Background" Value="#1E1F22" />
         <Setter Property="Foreground" Value="#FFFFFF" />
         <Setter Property="FontWeight" Value="SemiBold" />
     </Style>
 
     <!-- Disabled -->
     <Style Selector="TabItem:disabled">
-        <Setter Property="Background" Value="#202124" />
-        <Setter Property="Foreground" Value="#687280" />
+        <Setter Property="Background" Value="#25272C" />
+        <Setter Property="Foreground" Value="#6D6F78" />
+    </Style>
+
+    <!-- Pinned tabs: slightly lighter grey to stand out subtly -->
+    <Style Selector="TabItem:pinned">
+        <Setter Property="Background" Value="#383A40" />
+        <Setter Property="Foreground" Value="#B9BBBE" />
+    </Style>
+    <Style Selector="TabItem:pinned:pointerover">
+        <Setter Property="Background" Value="#41434A" />
+        <Setter Property="Foreground" Value="#DBDEE1" />
+    </Style>
+    <Style Selector="TabItem:pinned:selected">
+        <Setter Property="Background" Value="#1E1F22" />
+        <Setter Property="Foreground" Value="#FFFFFF" />
     </Style>
     
 </Styles>

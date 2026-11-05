@@ -17,6 +17,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\DockaloniaMinimal\DockaloniaMinimal.csproj" />
+      <ProjectReference Include="..\Dockalonia\Dockalonia.csproj" />
     </ItemGroup>
 </Project>

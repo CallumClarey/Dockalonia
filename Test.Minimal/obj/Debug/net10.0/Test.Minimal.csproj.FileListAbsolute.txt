@@ -72,8 +72,6 @@ C:\Users\Callu\Documents\Dockalonia\Test.Minimal\bin\Debug\net10.0\runtimes\win-
 C:\Users\Callu\Documents\Dockalonia\Test.Minimal\bin\Debug\net10.0\runtimes\win-x64\native\libSkiaSharp.pdb
 C:\Users\Callu\Documents\Dockalonia\Test.Minimal\bin\Debug\net10.0\runtimes\win-x86\native\libSkiaSharp.dll
 C:\Users\Callu\Documents\Dockalonia\Test.Minimal\bin\Debug\net10.0\runtimes\win-x86\native\libSkiaSharp.pdb
-C:\Users\Callu\Documents\Dockalonia\Test.Minimal\bin\Debug\net10.0\DockaloniaMinimal.dll
-C:\Users\Callu\Documents\Dockalonia\Test.Minimal\bin\Debug\net10.0\DockaloniaMinimal.pdb
 C:\Users\Callu\Documents\Dockalonia\Test.Minimal\obj\Debug\net10.0\Test.Minimal.csproj.AssemblyReference.cache
 C:\Users\Callu\Documents\Dockalonia\Test.Minimal\obj\Debug\net10.0\Avalonia\Resources.Inputs.cache
 C:\Users\Callu\Documents\Dockalonia\Test.Minimal\obj\Debug\net10.0\Avalonia\resources
@@ -88,3 +86,14 @@ C:\Users\Callu\Documents\Dockalonia\Test.Minimal\obj\Debug\net10.0\Test.Minimal.
 C:\Users\Callu\Documents\Dockalonia\Test.Minimal\obj\Debug\net10.0\Test.Minimal.genruntimeconfig.cache
 C:\Users\Callu\Documents\Dockalonia\Test.Minimal\obj\Debug\net10.0\ref\Test.Minimal.dll
 C:\Users\Callu\Documents\Dockalonia\Test.Minimal\obj\Debug\net10.0\Test.Minimal.sourcelink.json
+C:\Users\Callu\AppData\Local\Temp\opencode\tmout\Test.Minimal.exe
+C:\Users\Callu\AppData\Local\Temp\opencode\tmout\Test.Minimal.deps.json
+C:\Users\Callu\AppData\Local\Temp\opencode\tmout\Test.Minimal.runtimeconfig.json
+C:\Users\Callu\AppData\Local\Temp\opencode\tmout\Test.Minimal.dll
+C:\Users\Callu\AppData\Local\Temp\opencode\tmout\Test.Minimal.pdb
+C:\Users\Callu\Documents\Dockalonia\Test.Minimal\bin\Debug\net10.0\Dockalonia.dll
+C:\Users\Callu\Documents\Dockalonia\Test.Minimal\bin\Debug\net10.0\Dockalonia.pdb
+C:\Users\Callu\AppData\Local\Temp\opencode\dk-verify2\Test.Minimal.deps.json
+C:\Users\Callu\AppData\Local\Temp\opencode\dk-verify2\Test.Minimal.runtimeconfig.json
+C:\Users\Callu\AppData\Local\Temp\opencode\dk-verify2\Test.Minimal.dll
+C:\Users\Callu\AppData\Local\Temp\opencode\dk-verify2\Test.Minimal.pdb

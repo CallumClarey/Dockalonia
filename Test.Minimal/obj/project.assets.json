@@ -609,17 +609,17 @@
           }
         }
       },
-      "DockaloniaMinimal/1.0.0": {
+      "Dockalonia/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v10.0",
         "dependencies": {
           "Avalonia": "12.1.4"
         },
         "compile": {
-          "bin/placeholder/DockaloniaMinimal.dll": {}
+          "bin/placeholder/Dockalonia.dll": {}
         },
         "runtime": {
-          "bin/placeholder/DockaloniaMinimal.dll": {}
+          "bin/placeholder/Dockalonia.dll": {}
         }
       }
     }
@@ -1405,10 +1405,10 @@
         "tmds.dbus.protocol.nuspec"
       ]
     },
-    "DockaloniaMinimal/1.0.0": {
+    "Dockalonia/1.0.0": {
       "type": "project",
-      "path": "../DockaloniaMinimal/DockaloniaMinimal.csproj",
-      "msbuildProject": "../DockaloniaMinimal/DockaloniaMinimal.csproj"
+      "path": "../Dockalonia/Dockalonia.csproj",
+      "msbuildProject": "../Dockalonia/Dockalonia.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -1417,7 +1417,7 @@
       "Avalonia.Desktop >= 12.1.4",
       "Avalonia.Fonts.Inter >= 12.1.4",
       "Avalonia.Themes.Fluent >= 12.1.4",
-      "DockaloniaMinimal >= 1.0.0"
+      "Dockalonia >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -1453,8 +1453,8 @@
         "net10.0": {
           "targetAlias": "net10.0",
           "projectReferences": {
-            "C:\\Users\\Callu\\Documents\\Dockalonia\\DockaloniaMinimal\\DockaloniaMinimal.csproj": {
-              "projectPath": "C:\\Users\\Callu\\Documents\\Dockalonia\\DockaloniaMinimal\\DockaloniaMinimal.csproj"
+            "C:\\Users\\Callu\\Documents\\Dockalonia\\Dockalonia\\Dockalonia.csproj": {
+              "projectPath": "C:\\Users\\Callu\\Documents\\Dockalonia\\Dockalonia\\Dockalonia.csproj"
             }
           }
         }

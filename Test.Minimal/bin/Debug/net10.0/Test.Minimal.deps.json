@@ -12,7 +12,7 @@
           "Avalonia.Desktop": "12.1.4",
           "Avalonia.Fonts.Inter": "12.1.4",
           "Avalonia.Themes.Fluent": "12.1.4",
-          "DockaloniaMinimal": "1.0.0"
+          "Dockalonia": "1.0.0"
         },
         "runtime": {
           "Test.Minimal.dll": {}
@@ -488,12 +488,12 @@
           }
         }
       },
-      "DockaloniaMinimal/1.0.0": {
+      "Dockalonia/1.0.0": {
         "dependencies": {
           "Avalonia": "12.1.4"
         },
         "runtime": {
-          "DockaloniaMinimal.dll": {
+          "Dockalonia.dll": {
             "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.0.0"
           }
@@ -668,7 +668,7 @@
       "path": "tmds.dbus.protocol/0.94.1",
       "hashPath": "tmds.dbus.protocol.0.94.1.nupkg.sha512"
     },
-    "DockaloniaMinimal/1.0.0": {
+    "Dockalonia/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

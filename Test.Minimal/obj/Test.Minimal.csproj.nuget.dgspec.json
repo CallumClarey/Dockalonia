@@ -4,14 +4,14 @@
     "C:\\Users\\Callu\\Documents\\Dockalonia\\Test.Minimal\\Test.Minimal.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Callu\\Documents\\Dockalonia\\DockaloniaMinimal\\DockaloniaMinimal.csproj": {
+    "C:\\Users\\Callu\\Documents\\Dockalonia\\Dockalonia\\Dockalonia.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Callu\\Documents\\Dockalonia\\DockaloniaMinimal\\DockaloniaMinimal.csproj",
-        "projectName": "DockaloniaMinimal",
-        "projectPath": "C:\\Users\\Callu\\Documents\\Dockalonia\\DockaloniaMinimal\\DockaloniaMinimal.csproj",
+        "projectUniqueName": "C:\\Users\\Callu\\Documents\\Dockalonia\\Dockalonia\\Dockalonia.csproj",
+        "projectName": "Dockalonia",
+        "projectPath": "C:\\Users\\Callu\\Documents\\Dockalonia\\Dockalonia\\Dockalonia.csproj",
         "packagesPath": "C:\\Users\\Callu\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Callu\\Documents\\Dockalonia\\DockaloniaMinimal\\obj\\",
+        "outputPath": "C:\\Users\\Callu\\Documents\\Dockalonia\\Dockalonia\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -379,8 +379,8 @@
           "net10.0": {
             "targetAlias": "net10.0",
             "projectReferences": {
-              "C:\\Users\\Callu\\Documents\\Dockalonia\\DockaloniaMinimal\\DockaloniaMinimal.csproj": {
-                "projectPath": "C:\\Users\\Callu\\Documents\\Dockalonia\\DockaloniaMinimal\\DockaloniaMinimal.csproj"
+              "C:\\Users\\Callu\\Documents\\Dockalonia\\Dockalonia\\Dockalonia.csproj": {
+                "projectPath": "C:\\Users\\Callu\\Documents\\Dockalonia\\Dockalonia\\Dockalonia.csproj"
               }
             }
           }

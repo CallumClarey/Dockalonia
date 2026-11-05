@@ -3,52 +3,62 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:dock="TheDockingProject/dockalonia"
-        xmlns:tabControls="clr-namespace:DockaloniaMinimal.Tabbing.TabControls;assembly=DockaloniaMinimal"
+        xmlns:tabControls="clr-namespace:Dockalonia.Tabbing.TabControls;assembly=Dockalonia"
+        xmlns:tabs="clr-namespace:Dockalonia.Tabbing.Tabs;assembly=Dockalonia"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="Test.Minimal.MainWindow"
         Title="Test.Minimal">
     
-        <Grid>
-                <StackPanel Orientation="Vertical" Spacing="10" Margin="0,10">
+        <Grid ColumnDefinitions="auto,*">
+                <StackPanel Grid.Column="1" Orientation="Vertical" Spacing="10" Margin="0,10">
             
                         <TextBlock FontSize="20"> Rearrange Tab Control</TextBlock>
 
                         <tabControls:RearrangeTabControl Background="Transparent">
-                                <dock:DockaloniaTab Header="Tab1 "/>
-                                <dock:DockaloniaTab Header="Tab 2"/>
-                                <dock:DockaloniaTab Header="Tab 3"/>
-                                <dock:DockaloniaTab Header="Tab 4"/>
+                                <tabs:DockaloniaTab IsPinned="True" Header="Tab1 "/>
+                                <tabs:DockaloniaTab IsPinned="True" Header="Tab 2"/>
+                                <tabs:DockaloniaTab Header="Tab 3"/>
+                                <tabs:DockaloniaTab Header="Tab 4"/>
                         </tabControls:RearrangeTabControl>
             
                         <TextBlock FontSize="20">Detachable Tab Control</TextBlock>
                         <tabControls:DetachableTabControl>
-                                <dock:DockaloniaTab Header="Tab1 ">
-                                        <TextBox> Content tab1</TextBox>
-                                </dock:DockaloniaTab>
-                                <dock:DockaloniaTab Header="Tab 2">
-                                        <TextBox> Content tab2</TextBox>
-                                </dock:DockaloniaTab>
-                                <dock:DockaloniaTab Header="Tab 3">
-                                        <TextBox> Content tab3</TextBox>
-                                </dock:DockaloniaTab>
-                                <dock:DockaloniaTab Header="Tab 4">
-                                        <TextBox> Content tab4</TextBox>
-                                </dock:DockaloniaTab></tabControls:DetachableTabControl>
+                                <tabs:DockaloniaTab Header="Tab1 ">
+                                        <dock:TestPanel>
+                                                Content tab1
+                                        </dock:TestPanel>
+                                </tabs:DockaloniaTab>
+                                <tabs:DockaloniaTab Header="Tab 2">
+                                        <dock:TestPanel> Content tab2</dock:TestPanel>
+                                </tabs:DockaloniaTab>
+                                <tabs:DockaloniaTab Header="Tab 3">
+                                        <dock:TestPanel> Content tab3</dock:TestPanel>
+                                </tabs:DockaloniaTab>
+                                <tabs:DockaloniaTab Header="Tab 4">
+                                        <dock:TestPanel> Content tab4</dock:TestPanel>
+                                </tabs:DockaloniaTab></tabControls:DetachableTabControl>
                         <TextBlock FontSize="20">Detachable Tab Control</TextBlock>
                         <tabControls:DetachableTabControl>
-                                <dock:DockaloniaTab  Header="Tab1 ">
+                                <tabs:DockaloniaTab  Header="Tab1 ">
                                         <TextBox> Content tab1</TextBox>
-                                </dock:DockaloniaTab>
-                                <dock:DockaloniaTab  Header="Tab 2">
+                                </tabs:DockaloniaTab>
+                                <tabs:DockaloniaTab  Header="Tab 2">
                                         <TextBox> Content tab2</TextBox>
-                                </dock:DockaloniaTab>
-                                <dock:DockaloniaTab Header="Tab 3">
+                                </tabs:DockaloniaTab>
+                                <tabs:DockaloniaTab Header="Tab 3">
                                         <TextBox> Content tab3</TextBox>
-                                </dock:DockaloniaTab>
-                                <dock:DockaloniaTab Header="Tab 4">
+                                </tabs:DockaloniaTab>
+                                <tabs:DockaloniaTab Header="Tab 4">
                                         <TextBox> Content tab4</TextBox>
-                                </dock:DockaloniaTab></tabControls:DetachableTabControl>
+                                </tabs:DockaloniaTab></tabControls:DetachableTabControl>
             </StackPanel>
+            <tabControls:DetachableTabControl TabStripPlacement="Left" Grid.Column="0">
+                    <tabs:DockaloniaTab Header="Tab 23"></tabs:DockaloniaTab>
+                    <tabs:DockaloniaTab Header="Tab 21"></tabs:DockaloniaTab>
+                    <tabs:DockaloniaTab Header="Tab 12"></tabs:DockaloniaTab>
+                    <tabs:DockaloniaTab Header="Tab 2"></tabs:DockaloniaTab>
+            </tabControls:DetachableTabControl>
+                
         </Grid>
         
         
