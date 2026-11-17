@@ -7,4 +7,12 @@
         <RootNamespace>DockaloniaDockspace</RootNamespace>
     </PropertyGroup>
 
+    <ItemGroup>
+      <PackageReference Include="Avalonia" Version="12.1.4" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Dockalonia\Dockalonia.csproj" />
+    </ItemGroup>
+
 </Project>

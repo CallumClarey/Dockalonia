@@ -2,4 +2,5 @@
   <Project Path="Dockalonia/Dockalonia.csproj" />
   <Project Path="DockaloniaSpaces/DockaloniaSpaces.csproj" />
   <Project Path="Test.Minimal/Test.Minimal.csproj" />
+  <Project Path="Test.Spaces/Test.Spaces.csproj" />
 </Solution>

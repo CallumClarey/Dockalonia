@@ -1,0 +1,43 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:spaces="clr-namespace:DockaloniaDockspace;assembly=DockaloniaSpaces"
+        x:Class="Test.Spaces.MainWindow"
+        Width="900" Height="600"
+        Title="Test.Spaces - SplitContainer example">
+
+    <Grid RowDefinitions="Auto,*">
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Spacing="12" Margin="12">
+            <TextBlock Text="Orientation" VerticalAlignment="Center" />
+            <ComboBox x:Name="OrientationBox" SelectedIndex="0" Width="140">
+                <ComboBoxItem>Horizontal</ComboBoxItem>
+                <ComboBoxItem>Vertical</ComboBoxItem>
+            </ComboBox>
+
+            <TextBlock Text="Ratio" VerticalAlignment="Center" />
+            <Slider x:Name="RatioSlider" Minimum="0.05" Maximum="0.95" Value="0.5" Width="220" />
+            <TextBlock x:Name="RatioLabel" VerticalAlignment="Center" />
+        </StackPanel>
+
+        <!-- Top-level horizontal split. Children go into the [Content] Panes collection. -->
+        <spaces:SplitContainer Grid.Row="1" x:Name="Split" Orientation="Horizontal" Ratio="0.5" Margin="12">
+            <Border Background="#1E3A5F">
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Spacing="6">
+                    <TextBlock Text="Left pane" FontSize="18" Foreground="White" HorizontalAlignment="Center" />
+                    <TextBlock Text="Drag the bar to resize" Foreground="#B9C7D9" HorizontalAlignment="Center" />
+                </StackPanel>
+            </Border>
+
+            <!-- The right pane is itself a SplitContainer, so splits compose into a tree. -->
+            <spaces:SplitContainer Orientation="Vertical" Ratio="0.5">
+                <Border Background="#2F5F3A">
+                    <TextBlock Text="Right / Top pane" FontSize="18" Foreground="White"
+                               HorizontalAlignment="Center" VerticalAlignment="Center" />
+                </Border>
+                <Border Background="#5F2F3A">
+                    <TextBlock Text="Right / Bottom pane" FontSize="18" Foreground="White"
+                               HorizontalAlignment="Center" VerticalAlignment="Center" />
+                </Border>
+            </spaces:SplitContainer>
+        </spaces:SplitContainer>
+    </Grid>
+</Window>
